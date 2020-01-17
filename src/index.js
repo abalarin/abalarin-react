@@ -1,12 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
+import './styles/index.css';
+import './styles/navigation.scss';
+
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function Menu() {
+	return (
+		<div>
+			<nav className="navigation">
+				<section className="container">
+					<a className="navigation-title" href="http://localhost:3000">
+						austinbalarin
+					</a>
+					<input type="checkbox" id="menu-toggle" />
+					<label className="menu-button float-right" htmlFor="menu-toggle"><i className="fas fa-bars"></i></label>
+					<ul className="navigation-list">
+						<li className="navigation-item">
+							<a className="navigation-link" href="http://localhost:3000/music">Music</a>
+						</li>
+						<li className="navigation-item menu-separator">
+								<span>|</span>
+						</li>
+						<li className="navigation-item">
+							<a className="navigation-link" href="http://localhost:3000/git">Github</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+		</div>
+	)
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+		<>
+			<Menu/>
+			<App />
+		</>
+		, document.getElementById('root')
+);
