@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
+import '../styles/music.css'
+
 const useStyles = makeStyles(theme => ({
 	card: {
 		display: 'flex',
@@ -18,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 		textAlign: 'left',
 	},
 	cover: {
-		width: 151,
+		width: 'calc(130px + 2vmin)',
 		height: 130,
 	},
 }));
@@ -74,7 +76,7 @@ function MediaControlCard(props) {
 												{song.artist}
 										</Typography>
 										<Typography variant="caption" color="textSecondary">
-												Played {timeSince(song.played_at)} Ago
+												Played {timeSince(song.played_at)} ago
 										</Typography>
 										</CardContent>
 								</div>
@@ -127,11 +129,13 @@ class Music extends React.Component {
 
 	render(){
 		return (
-			<div>
-				<Typography component="h2" variant="h2" style={{fontFamily: 'Lato', fontSize: 'calc(25px + 2vmin)', marginBottom: '30px'}}>
-					Music
-				</Typography>
-				<MediaControlCard music={this.state.music}/>
+			<div className="music_feed" style={{width:'100%', textAlign:'center'}}>
+				<div style={{display: 'inline-block'}}>
+					<Typography component="h2" variant="h2" style={{fontFamily: 'Lato', fontSize: 'calc(25px + 2vmin)', marginBottom: '30px'}}>
+						Music
+					</Typography>
+					<MediaControlCard music={this.state.music}/>				
+				</div>
 			</div>
 		)
 	}

@@ -223,7 +223,13 @@ var GitHubActivity = (function() {
 						activity;
 
 				if (!!options.repository){
-				eventsUrl = 'https://api.github.com/repos/' + options.username + '/' + options.repository + '/events';
+					eventsUrl = 'https://api.github.com/repos/' + options.username + '/' + options.repository + '/events';
+				}
+				
+				let config = require('../config.json');
+				if (config.GITHUB_TOKEN) {
+					userUrl += '?access_token=' + config.GITHUB_TOKEN;
+					eventsUrl += '?access_token=' + config.GITHUB_TOKEN;
 				}
 
 				if (options.clientId && options.clientSecret) {

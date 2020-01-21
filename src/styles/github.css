@@ -260,13 +260,16 @@
 	.gha-push-small  { height: 26px; }
 	
 .github_feed{
+		width: 100%;
+		max-width: 800px;
 		text-align: left;
 		padding-left: calc(25px + 2vmin);
+		padding-bottom: calc(25px + 2vmin);
 }
+
 @media only screen and (max-width : 768px) {
 		.github_feed {
 				padding-left: 0;
-				padding-top: calc(25px + 10vmin);
 		}  
 }
 	

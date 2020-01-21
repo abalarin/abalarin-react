@@ -1,0 +1,5 @@
+@media only screen and (max-width : 768px) {
+    .music_feed {
+        padding-bottom: calc(25px + 10vmin);
+    }  
+}
